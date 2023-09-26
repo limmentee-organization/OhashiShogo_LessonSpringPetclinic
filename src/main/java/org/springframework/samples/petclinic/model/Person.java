@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotNull;
 
+//@MappedSuperclass: エンティティクラスではなく、他のエンティティクラスから継承される抽象クラスのこと。
+//このクラスはデータベースにマッピングするテーブルはないが他のエンティティクラスから継承している。そのため、共通のメソッドを再利用できる。
 @MappedSuperclass
 public class Person extends BaseEntity {
 
