@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface OwnerRepository extends Repository<Owner, Integer> {
 
+	//@Query: クエリを実行できるアノテーション。
+	//@Transactional: 読み取り専用にする。これにより更新登録ができないトラザクションになる。
+
 	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
 	@Transactional(readOnly = true)
 	List<PetType> findPetTypes();
